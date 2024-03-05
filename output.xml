@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-03-05T13:18:04.993710" rpa="false" schemaversion="5">
+<suite id="s1" name="Exam-Robot" source="/home/northy/Desktop/CE66-2/SOFTDEV/SDP-Lab_exam_robot/exam-robot.robot">
+<test id="s1-t1" name="test x is 3dot6" line="12">
+<kw name="Is 1 Honor">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-05T13:18:05.313171" level="INFO">GET Request : url=http://localhost:5000/is1honor/3.6 
+ path_url=/is1honor/3.6 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T13:18:05.344426" level="INFO">GET Response : url=http://localhost:5000/is1honor/3.6 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.10.12', 'Date': 'Tue, 05 Mar 2024 06:18:05 GMT', 'Content-Type': 'application/json', 'Content-Length': '16', 'Connection': 'close'} 
+ body={"result":true}
+ 
+ </msg>
+<msg time="2024-03-05T13:18:05.345058" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>http://localhost:5000/is1honor/${x}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.307021" elapsed="0.038242"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-03-05T13:18:05.345642" elapsed="0.000182"/>
+</return>
+<msg time="2024-03-05T13:18:05.346750" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>3.6</arg>
+<status status="PASS" start="2024-03-05T13:18:05.303986" elapsed="0.042981"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.347977" elapsed="0.000680"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-05T13:18:05.351052" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>${resp.json()['result']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.349251" elapsed="0.001919"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.351990" elapsed="0.001022"/>
+</kw>
+<status status="PASS" start="2024-03-05T13:18:05.302996" elapsed="0.050687"/>
+</test>
+<test id="s1-t2" name="test x is 3dot5" line="18">
+<kw name="Is 1 Honor">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-05T13:18:05.361324" level="INFO">GET Request : url=http://localhost:5000/is1honor/3.5 
+ path_url=/is1honor/3.5 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T13:18:05.361534" level="INFO">GET Response : url=http://localhost:5000/is1honor/3.5 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.10.12', 'Date': 'Tue, 05 Mar 2024 06:18:05 GMT', 'Content-Type': 'application/json', 'Content-Length': '16', 'Connection': 'close'} 
+ body={"result":true}
+ 
+ </msg>
+<msg time="2024-03-05T13:18:05.361852" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>http://localhost:5000/is1honor/${x}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.356204" elapsed="0.005733"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-03-05T13:18:05.362161" elapsed="0.000114"/>
+</return>
+<msg time="2024-03-05T13:18:05.362632" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>3.5</arg>
+<status status="PASS" start="2024-03-05T13:18:05.355537" elapsed="0.007155"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.363175" elapsed="0.000467"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-05T13:18:05.365585" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>${resp.json()['result']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.364226" elapsed="0.001447"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res}</arg>
+<arg>${True}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.366171" elapsed="0.000716"/>
+</kw>
+<status status="PASS" start="2024-03-05T13:18:05.354505" elapsed="0.012885"/>
+</test>
+<test id="s1-t3" name="test x is 3dot4" line="24">
+<kw name="Is 1 Honor">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-05T13:18:05.375236" level="INFO">GET Request : url=http://localhost:5000/is1honor/3.4 
+ path_url=/is1honor/3.4 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T13:18:05.375433" level="INFO">GET Response : url=http://localhost:5000/is1honor/3.4 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.10.12', 'Date': 'Tue, 05 Mar 2024 06:18:05 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
+ body={"result":false}
+ 
+ </msg>
+<msg time="2024-03-05T13:18:05.375731" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>http://localhost:5000/is1honor/${x}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.370321" elapsed="0.005478"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-03-05T13:18:05.376009" elapsed="0.000103"/>
+</return>
+<msg time="2024-03-05T13:18:05.376588" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>3.4</arg>
+<status status="PASS" start="2024-03-05T13:18:05.369414" elapsed="0.007293"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.377278" elapsed="0.000513"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-05T13:18:05.380167" level="INFO">${res} = False</msg>
+<var>${res}</var>
+<arg>${resp.json()['result']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.378491" elapsed="0.001806"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res}</arg>
+<arg>${False}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-05T13:18:05.380905" elapsed="0.000952"/>
+</kw>
+<status status="PASS" start="2024-03-05T13:18:05.368083" elapsed="0.014603"/>
+</test>
+<status status="PASS" start="2024-03-05T13:18:04.995803" elapsed="0.389300"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Exam-Robot">Exam-Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

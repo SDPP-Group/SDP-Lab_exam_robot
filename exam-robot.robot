@@ -3,26 +3,26 @@ Library    SeleniumLibrary
 Library    RequestsLibrary
 
 *** Keywords ***
-Is Prime
+Is 1 Honor
     [Arguments]    ${x}
-    ${response}=    Get    http://localhost:5000/is_prime/${x}    expected_status=any
+    ${response}=    Get    http://localhost:5000/is1honor/${x}    expected_status=any
     RETURN    ${response}
 
 *** Test Cases ***
-True When X is 17
-    ${resp}=    Is Prime    17
+test x is 3dot6
+    ${resp}=    Is 1 Honor    3.6
     Status Should Be    200
     ${res}=    Set Variable    ${resp.json()['result']}
-    Should Be Equal    ${res}    true
+    Should Be Equal    ${res}    ${True}
 
-False When X is 36
-    ${resp}=    Is Prime    36
+test x is 3dot5
+    ${resp}=    Is 1 Honor    3.5
     Status Should Be    200
     ${res}=    Set Variable    ${resp.json()['result']}
-    Should Be Equal    ${res}    false
+    Should Be Equal    ${res}    ${True}
 
-False When X is 13219
-    ${resp}=    Is Prime    13219
+test x is 3dot4
+    ${resp}=    Is 1 Honor    3.4
     Status Should Be    200
     ${res}=    Set Variable    ${resp.json()['result']}
-    Should Be Equal    ${res}    true
+    Should Be Equal    ${res}    ${False}
